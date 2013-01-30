@@ -1,0 +1,63 @@
+{
+  "cloud": { "provider": "vagrant", "public_ips": [], "private_ips": [] },
+  "rightscale": { "instance_uuid": "uuid-default" },
+  "sys": {
+    "swap_size": "0.5",
+    "swap_file": "/mnt/ephemeral/swapfile"
+  },
+  "block_device": {
+    "devices": {
+      "device1": {
+        "backup": {
+          "lineage": "lineage"
+        }
+      }
+    }
+  },
+  "db": {
+    "admin": {
+      "user": "user",
+      "password": "password"
+    },
+    "application": {
+      "user": "user",
+      "password": "password"
+    },
+    "dns": {
+      "master": {
+        "fqdn": "localhost"
+      }
+    }
+  },
+  "lnmp_aio": {
+    "web": {
+      "hostname": "vg.wordpressaio"
+    }
+  },
+  "mail_postfix": {
+    "db_pass": "password"
+  },
+  "php5": {
+    "server_usage": "shared"
+  },
+  "system": {
+    "short_hostname": "vg",
+    "domain_name": "wordpressaio"
+  },
+  "run_list": [
+    "recipe[rs_vagrant_shim]",
+    "recipe[system::hostname]",
+    "recipe[logging::default]",
+    "recipe[sys_firewall::default]",
+    "recipe[sys_ntp::default]",
+    "recipe[rightscale::default]",
+    "recipe[rightscale::install_tools]",
+    "recipe[block_device::setup_ephemeral]",
+    "recipe[sys::setup_swap]",
+    "recipe[db_mysql::setup_server_5_1]",
+    "recipe[rightscale::install_file_stats_collectd_plugin]",
+    "recipe[db::install_server]",
+    "recipe[db::setup_monitoring]",
+    "recipe[lnmp_aio::setup_lnmp_aio]"
+  ]
+}

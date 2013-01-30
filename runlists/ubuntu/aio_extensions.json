@@ -1,0 +1,5 @@
+{
+  "gitolite": {
+  },
+  "run_list": ["recipe[gitolite]"]
+}
