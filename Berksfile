@@ -66,8 +66,7 @@ cookbook "web_apache",
   rel: "cookbooks/web_apache"
 
 cookbook "app_wordpress",
-  path: "~/Code/Chef/me/rgeyer-rs-cookbooks/app_wordpress/"
-  #git: "git://github.com/rgeyer-rs-cookbooks/app_wordpress.git"
+  git: "git://github.com/rgeyer-rs-cookbooks/app_wordpress.git"
 
 cookbook "php5",
   git: "git://github.com/rgeyer-rs-cookbooks/php5.git"
@@ -91,11 +90,10 @@ cookbook "phpmyadmin",
   git: "git://github.com/rgeyer-rs-cookbooks/phpmyadmin.git"
 
 cookbook "mail_postfix",
-  path: "~/Code/Chef/me/rgeyer-rs-cookbooks/mail_postfix"
-  #git: "git://github.com/rgeyer-rs-cookbooks/mail_postfix.git"
+  git: "git://github.com/rgeyer-rs-cookbooks/mail_postfix.git"
 
 cookbook "mysql",
-  path: "~/Code/Chef/me/rgeyer-rs-cookbooks/mysql"
+  git: "git://github.com/rgeyer-rs-cookbooks/mysql.git"
 
 cookbook "system",
   git: "git://github.com/flaccid/cookbooks.git",
@@ -117,7 +115,6 @@ end
 
 group :vagrant_only do
   cookbook "rs_vagrant_shim",
-    path: "~/Code/Chef/me/rgeyer-rs-cookbooks/rs_vagrant_shim/cookbooks/rs_vagrant_shim"
-    #git: "https://github.com/rgeyer-rs-cookbooks/rs_vagrant_shim.git",
-    #rel: "cookbooks/rs_vagrant_shim"
+    git: "https://github.com/rgeyer-rs-cookbooks/rs_vagrant_shim.git",
+    rel: "cookbooks/rs_vagrant_shim"
 end
