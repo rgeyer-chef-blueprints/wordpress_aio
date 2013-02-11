@@ -6,8 +6,6 @@ Vagrant::Config.run do |config|
   config.vm.define :centos do |default_config|
     default_config.berkshelf.berksfile_path = "Berksfile"
 
-    default_config.berkshelf.only = "aio_extensions_role"
-
     default_config.vm.host_name = "centos"
 
     default_config.vm.box = "ri_centos6.3_v5.8.8"
@@ -27,8 +25,6 @@ Vagrant::Config.run do |config|
 
   config.vm.define :ubuntu do |ubuntu_config|
     ubuntu_config.berkshelf.berksfile_path = "Berksfile"
-
-    ubuntu_config.berkshelf.only = "aio_extensions_role"
 
     ubuntu_config.vm.host_name = "ubuntu"
 
